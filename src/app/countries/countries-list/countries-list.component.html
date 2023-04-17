@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form [formGroup]="form">
+          <nz-select
+          formControlName="input"
+          nzAllowClear
+          nzPlaceHolder="Select countries"
+        >
+          <nz-option *ngFor="let countri of countries" [nzValue]="countri.name" [nzLabel]="countri.name">
+            {{countri.name}}
+          </nz-option>
+        </nz-select>
+  </form>
+    </div>
+  </div>

@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-xs-12">
+      <!-- testing -->
+        <form [formGroup]="form">
+          <nz-select
+          formControlName="input"
+          nzAllowClear
+          nzPlaceHolder="Select Airplane"
+        >
+          <nz-option *ngFor="let airplan of airplans" [nzValue]="airplan.name" [nzLabel]="airplan.name">
+            {{airplan.name}}
+          </nz-option>
+        </nz-select>
+</form>
+    </div>
+</div>
