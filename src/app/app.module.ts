@@ -38,6 +38,10 @@ import { CountriesComponent } from './countries/countries.component';
 import { CountriesListComponent } from './countries/countries-list/countries-list.component';
 import { CountriesItemComponent } from './countries/countries-item/countries-item.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProfileComponent } from './profile/profile.component';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { VerificationComponent } from './profile/verification/verification.component';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
 
 registerLocaleData(en);
 
@@ -53,7 +57,9 @@ const antmaterial = [
   NzInputModule,
   NzFormModule,
   NzAlertModule,
-  NzAutocompleteModule
+  NzAutocompleteModule,
+  NzTableModule,
+  NzUploadModule
 ]
 
 
@@ -79,7 +85,10 @@ const angularmaterial = [
     ErrorPageComponent,
     CountriesComponent,
     CountriesListComponent,
-    CountriesItemComponent
+    CountriesItemComponent,
+    ProfileComponent,
+    VerificationComponent,
+    
   ],
   imports: [
     BrowserModule,

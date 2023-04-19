@@ -1,24 +1,37 @@
-<ul  nz-menu nzMode="horizontal">
-    <li nz-menu-item nzSelected>
-      <span nz-icon nzType="home"></span>
-      <a style="text-decoration: none;" routerLink="/home"><span>Home</span></a>
-    </li>
-    <li nz-menu-item >
-      <span nz-icon nzType="user"></span>
-      <a style="text-decoration: none;" routerLink="/auth"><span>login/signup</span></a>
-    </li>
-    <li nz-submenu nzTitle="General" nzIcon="setting">
-      <ul>
-        <li nz-menu-group nzTitle="Item 1">
-          <ul>
-            <li nz-menu-item (click)="Onlogout()">logout</li>
-            <li nz-menu-item>Option 2</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li nz-menu-item>
-      <a style="text-decoration: none;" href="https://github.com/Manibigdeli" target="_blank">
-        <span nz-icon nzType="github" nzTheme="outline"></span>Github</a>
-    </li>
-  </ul>
+<ul nz-menu nzMode="horizontal">
+  <li nz-menu-item nzSelected>
+    <span nz-icon nzType="home"></span>
+    <a style="text-decoration: none" routerLink="/home"><span>Home</span></a>
+  </li>
+  <li nz-menu-item *ngIf="!authmode">
+    <span nz-icon nzType="user"></span>
+    <a style="text-decoration: none" routerLink="/auth"
+      ><span>login/signup</span></a
+    >
+  </li>
+  <li nz-submenu *ngIf="authmode" nzTitle="General" nzIcon="setting">
+    <ul>
+      <li nz-menu-group>
+        <ul>
+          <li nz-menu-item (click)="Onlogout()">
+            <span nz-icon nzType="logout" nzTheme="outline"> </span>logout
+          </li>
+          <li nz-menu-item>
+            <span nz-icon nzType="user" nzTheme="outline">
+              <a routerLink="/profile"></a></span
+            >Profile
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li nz-menu-item>
+    <a
+      style="text-decoration: none"
+      href="https://github.com/Manibigdeli"
+      target="_blank"
+    >
+      <span nz-icon nzType="github" nzTheme="outline"></span>Github</a
+    >
+  </li>
+</ul>

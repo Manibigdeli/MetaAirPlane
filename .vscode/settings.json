@@ -1,5 +1,4 @@
 {
-    "cSpell.words": [
-        "errormessage"
-    ]
+  "cSpell.words": ["autolog", "errormessage"],
+  "editor.formatOnSave": true
 }

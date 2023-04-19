@@ -1,0 +1,44 @@
+<form [formGroup]="form" (ngSubmit)="Onsubmit()">
+  <nz-upload
+    nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+    [nzHeaders]="{ authorization: 'authorization-text' }"
+    (nzChange)="handleChange($event)"
+  >
+    <button nz-button>
+      <span nz-icon nzType="upload"></span>
+      Click to Upload
+    </button>
+  </nz-upload>
+  <br />
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-xs-4">
+          <label>name:</label>
+          <input formControlName="name" class="form-control" type="text" />
+        </div>
+        <div class="col-xs-4">
+          <label>phone number:</label>
+          <input formControlName="number" class="form-control" type="text" />
+        </div>
+        <div class="col-xs-4">
+          <label>family:</label>
+          <input formControlName="family" class="form-control" type="text" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-2">
+      <h5
+        *ngIf="error"
+        class="alert alert-danger"
+        style="text-align: center; font-size: 20px"
+      >
+        {{ errormes }}
+      </h5>
+    </div>
+  </div>
+</form>
